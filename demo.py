@@ -19,7 +19,7 @@ parser.add_argument(
     "-m",
     "--model_path",
     type=str,
-    default="data/exp/ckpt/lsun_adm/model_epoch_latest.pth",
+    default="/home/lorenzp/workspace/dire/checkpoints/imagenet_adm.pth",
 )
 parser.add_argument("--use_cpu", action="store_true", help="uses gpu by default, turn on to use cpu")
 parser.add_argument("--arch", type=str, default="resnet50")

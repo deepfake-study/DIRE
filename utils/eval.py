@@ -13,7 +13,6 @@ from utils.utils import to_cuda
 def get_val_cfg(cfg: CONFIGCLASS, split="val", copy=True):
     if copy:
         from copy import deepcopy
-
         val_cfg = deepcopy(cfg)
     else:
         val_cfg = cfg

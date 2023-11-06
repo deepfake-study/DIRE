@@ -57,8 +57,9 @@ class DefaultConfigs(ABC):
 
     # paths information
     root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+    # root_dir = "/home/lorenzp/DeepFakeDetectors/DIRE"
     dataset_root = os.path.join(root_dir, "data")
-    exp_root = os.path.join(root_dir, "data", "exp")
+    exp_root = os.path.join("/home/lorenzp/workspace/dire", "data", "exp")
     _exp_name = ""
     exp_dir = ""
     ckpt_dir = ""

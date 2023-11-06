@@ -50,6 +50,8 @@ def main():
     logger.log(str(args))
 
     model, diffusion = create_model_and_diffusion(**args_to_dict(args, model_and_diffusion_defaults().keys()))
+    # tmp = dist_util.load_state_dict(args.model_path, map_location="cpu")
+    # model.load_state_dict(tmp["model"])
     model.load_state_dict(dist_util.load_state_dict(args.model_path, map_location="cpu"))
     model.to(dist_util.dev())
     logger.log("have created model and diffusion")
@@ -149,9 +151,9 @@ def main():
 
 def create_argparser():
     defaults = dict(
-        images_dir="/data2/wangzd/dataset/DiffusionForensics/images",
-        recons_dir="/data2/wangzd/dataset/DiffusionForensics/recons",
-        dire_dir="/data2/wangzd/dataset/DiffusionForensics/dire",
+        images_dir="/home/DATA/ITWM/lorenzp/dire/adversarial/images",
+        recons_dir="/home/DATA/ITWM/lorenzp/dire/adversarial/recons",
+        dire_dir="/home/DATA/ITWM/lorenzp/dire/adversarial/dire",
         clip_denoised=True,
         num_samples=-1,
         batch_size=16,

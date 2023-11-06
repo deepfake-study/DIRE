@@ -14,6 +14,7 @@ from utils.utils import Logger
 
 if __name__ == "__main__":
     val_cfg = get_val_cfg(cfg, split="val", copy=True)
+    train_cfg = get_val_cfg(cfg, split="train", copy=True)
     cfg.dataset_root = os.path.join(cfg.dataset_root, "train")
     data_loader = create_dataloader(cfg)
     dataset_size = len(data_loader)
@@ -24,7 +25,7 @@ if __name__ == "__main__":
     log.write("Config:\n" + str(cfg.to_dict()) + "\n")
 
     train_writer = SummaryWriter(os.path.join(cfg.exp_dir, "train"))
-    val_writer = SummaryWriter(os.path.join(cfg.exp_dir, "val"))
+    val_writer   = SummaryWriter(os.path.join(cfg.exp_dir, "val"))
 
     trainer = Trainer(cfg)
     early_stopping = EarlyStopping(patience=cfg.earlystop_epoch, delta=-0.001, verbose=True)
@@ -55,9 +56,13 @@ if __name__ == "__main__":
             log.write("saving the model at the end of epoch %d, iters %d\n" % (epoch, trainer.total_steps))
             trainer.save_networks("latest")
             trainer.save_networks(epoch)
-
+        
         # Validation
         trainer.eval()
+        if epoch % 3 == 0:
+            train_results = validate(trainer.model, train_cfg)
+            log.write(f"(Train @ epoch {epoch}) AP: {train_results['AP']}; ACC: {train_results['ACC']}\n")
+
         val_results = validate(trainer.model, val_cfg)
         val_writer.add_scalar("AP", val_results["AP"], trainer.total_steps)
         val_writer.add_scalar("ACC", val_results["ACC"], trainer.total_steps)

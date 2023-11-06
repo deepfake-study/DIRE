@@ -1,0 +1,14 @@
+{
+    "run_nr":"run_1", 
+    "att":"pgd", 
+    "dataset":"imagenet", 
+    "model":"resnet18", 
+    "eps":"8/255", 
+    "norm":"Linf", 
+    "version":"standard", 
+    "bs":1, 
+    "classes":100, 
+    "benign": false,
+    "attack": true,
+    "load_json":"./configs/gen/"
+}
