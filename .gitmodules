@@ -1,7 +1,8 @@
-[submodule "helper_gen/attacks/BlackboxBench"]
-	path = helper_gen/attacks/BlackboxBench
-	url = https://github.com/SCLBD/BlackboxBench.git
 [submodule "helper_gen/attacks/autoattack"]
 	path = helper_gen/attacks/autoattack
 	url = https://github.com/adverML/auto-attack.git
 	branch = multilid
+[submodule "helper_gen/attacks/BlackBoxBench"]
+	path = helper_gen/attacks/BlackBoxBench
+	url = git@github.com:adverML/BlackboxBench.git
+	branch = master

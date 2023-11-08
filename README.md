@@ -1,3 +1,6 @@
+git submodule add -b multilid https://github.com/adverML/auto-attack.git autoattack
+git submodule add -b master git@github.com:adverML/BlackboxBench.git  BlackBoxBench
+
 # DIRE for Diffusion-Generated Image Detection (ICCV 2023)
 <b> <a href='https://zhendongwang6.github.io/'>Zhendong Wang</a>, <a href='https://jianminbao.github.io/'>Jianmin Bao</a>, <a href='http://staff.ustc.edu.cn/~zhwg/'>Wengang Zhou</a>, Weilun Wang, Hezhen Hu, Hong Chen, <a href='http://staff.ustc.edu.cn/~lihq/en/'>Houqiang Li </a> </b>
 
