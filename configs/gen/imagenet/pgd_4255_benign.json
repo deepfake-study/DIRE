@@ -8,6 +8,7 @@
     "version":"standard",
     "bs":1,
     "classes":100, 
+    "max_samples_per_class": 100,
     "benign": true,
     "attack": false,
     "load_json":"./configs/gen/"

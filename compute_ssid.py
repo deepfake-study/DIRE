@@ -66,7 +66,7 @@ dataloader2 = DataLoader(dataset2, batch_size=1, shuffle=False)
 
 # Initialize lists to store SSIM, SNR, and PSNR values
 ssim_values = []
-snr_values = []
+snr_values  = []
 psnr_values = []
 
 # Iterate through the images and calculate SSIM, SNR, and PSNR for each pair of images
