@@ -1,0 +1,15 @@
+{
+    "run_nr":"run_1", 
+    "att":"square", 
+    "dataset":"imagenet", 
+    "model":"resnet18", 
+    "eps":null, 
+    "norm":"Linf", 
+    "version":"custom", 
+    "bs":1, 
+    "classes":100, 
+    "max_samples_per_class": 100,
+    "benign": false,
+    "attack": true,
+    "load_json":"./configs/gen/"
+}

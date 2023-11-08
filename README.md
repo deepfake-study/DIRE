@@ -1,4 +1,4 @@
-git submodule add -b multilid https://github.com/adverML/auto-attack.git autoattack
+git submodule add -b multilid https://github.com/adverML/auto-attack.git autoattack_sm
 git submodule add -b master git@github.com:adverML/BlackboxBench.git  BlackBoxBench
 
 # DIRE for Diffusion-Generated Image Detection (ICCV 2023)
